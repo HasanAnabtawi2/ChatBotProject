@@ -6,7 +6,7 @@ def clean_text(text):
     text = text.strip()
  
     # Step 2: Replace multiple spaces with a single space
-    text = ''.join(text.split())
+    text = ' '.join(text.split())
  
     # Step 3: Replace newline characters with spaces
     text = text.replace('\n', ' ').replace('\r', ' ')
