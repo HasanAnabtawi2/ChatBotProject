@@ -1,0 +1,15 @@
+["https://www.tutorialsteacher.com/csharp/csharp-class",
+"https://www.tutorialsteacher.com/csharp/namespace",
+"https://www.tutorialsteacher.com/csharp/csharp-variable",
+"https://www.tutorialsteacher.com/csharp/csharp-var-implicit-typed-local-variable",
+"https://www.tutorialsteacher.com/csharp/csharp-data-types",
+"https://www.tutorialsteacher.com/csharp/csharp-interface",
+"https://www.tutorialsteacher.com/csharp/csharp-generics",
+"https://www.tutorialsteacher.com/csharp/csharp-collection",
+"https://www.tutorialsteacher.com/csharp/csharp-nullable-types",
+"https://www.tutorialsteacher.com/csharp/object-oriented-programming",
+"https://www.tutorialsteacher.com/csharp/csharp-fileinfo",
+"https://www.tutorialsteacher.com/csharp/csharp-for-loop",
+"https://www.tutorialsteacher.com/csharp/csharp-enum"]
+
+
