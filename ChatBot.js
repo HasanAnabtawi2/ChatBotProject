@@ -13,6 +13,7 @@ async function llmResponse(historyList) {
     });
 
     if (!response.ok) {
+      document.getElementById('loading').style.display = 'none';
       h=localStorage.getItem("chatHistory")
       history_list=JSON.parse(h)
       history_list.pop()
@@ -33,18 +34,22 @@ async function llmResponse(historyList) {
     left_container.innerHTML='<span><img src="chatbot_logo.png" height="35" class="p-1"> </span>'
     let left_div=document.createElement("div")
     left_div.className='left_message'
-    
+    document.getElementById('loading').style.display = 'none';
+
     left_div.innerHTML=data
     left_container.append(left_div)
 
     return data;
   } catch (error) {
+    document.getElementById('loading').style.display = 'none';
     console.error("Fetch error:", error);
   }
 }
 
 function sendQuery(){
 
+
+  document.getElementById('loading').style.display = 'block';
   debugger
 
   let messageBox=document.getElementById('messageBox')

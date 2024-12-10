@@ -1,14 +1,11 @@
 from typing import List
 import chromadb
-from fastapi import Depends
 from langchain_text_splitters import CharacterTextSplitter
 import ollama
 from langchain_community.document_loaders import UnstructuredURLLoader
 import uuid
 
-from bs4 import BeautifulSoup
-
-import requests
+from clean import clean_text
 
 
 class VectorDatabaseService:
@@ -102,21 +99,14 @@ class VectorDatabaseService:
         splitted_list=[]
         splitted=text_splitter.split_text(document)
         for doc in splitted:
-            splitted_list.append(' '.join(doc.split()))
+            splitted_list.append(clean_text(doc))
             
         return splitted_list
     
         
 
 
-    def beautiful_soup_loader(self):
-        url = "https://www.tutorialsteacher.com/csharp/csharp-class"
 
-        response = requests.get(url)
-        soup=BeautifulSoup(response.content,'html.parser')  
-        article=soup.find('article')
-
-        return article
 
  
     def add_document_by_urls(self,urls:List[str]):

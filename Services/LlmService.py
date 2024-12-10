@@ -4,8 +4,8 @@ import ssl
 from typing import List
 import urllib
 from dotenv import load_dotenv
-from DTOs.PromptDTO import PromptDTO, PromptMessagesDTO
-from Services.VectorDatabaseService import VectorDatabaseService
+from DTOs.PromptDTO import PromptMessagesDTO
+
 
 
 
@@ -78,9 +78,10 @@ class LlmService:
                          documents provided to you with answer dpending on it. \
 
                         - Your task is to answer these questions based on the information contained in \
-                              the provided documents. 
+                              the provided documents without mention that in response. 
                         - Return your answers in plain text format.\
-                        - if the question in another language like arabic, answer in the question language
+                        - if the most of last user input in arabic, answer in this arabic language,\
+                        for example: \'\'\' ما هي for loop?\'\'\',  give the answer in arabic.
                 
                         - The reference documents are: {documents["documents"]}.
                         -if the question not related to provided documents, reply with : "The question not related to C#"
