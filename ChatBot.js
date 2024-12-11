@@ -37,8 +37,10 @@ async function llmResponse(historyList) {
     document.getElementById('loading').style.display = 'none';
 
     left_div.innerHTML=data
+    
     left_container.append(left_div)
-
+    debugger
+    scrollToBottom() 
     return data;
   } catch (error) {
     document.getElementById('loading').style.display = 'none';
@@ -49,10 +51,19 @@ async function llmResponse(historyList) {
 function sendQuery(){
 
 
-  document.getElementById('loading').style.display = 'block';
-  debugger
+
+
+ 
+
 
   let messageBox=document.getElementById('messageBox')
+
+  if (messageBox.value==''){
+
+
+  }
+  else{
+  document.getElementById('loading').style.display = 'block';
   let messageContainer=document.getElementById('messageContainer')
   
   let right_div=document.createElement("div")
@@ -82,7 +93,7 @@ function sendQuery(){
   messageBox.value=''
   
   
-
+  }
 
 
 }
@@ -97,7 +108,7 @@ function handleKeyDown(event) {
 
 
 function loadHistory(){
-  debugger
+ 
   let messageContainer=document.getElementById('messageContainer')
 
   h=localStorage.getItem("chatHistory")
@@ -144,4 +155,15 @@ function deleteHistory(){
 
 
 
-  
+
+function scrollToBottom() {
+  debugger
+  let messageContainer=document.getElementById('messageContainer')
+  let bottomElement = messageContainer.lastElementChild
+  bottomElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+
+
+ 
+
