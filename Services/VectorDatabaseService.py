@@ -5,7 +5,7 @@ import ollama
 from langchain_community.document_loaders import UnstructuredURLLoader
 import uuid
 
-from clean import clean_text
+from text_cleaning import clean_text
 
 
 class VectorDatabaseService:
